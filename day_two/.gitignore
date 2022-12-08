@@ -1,4 +1,4 @@
 Cargo.lock
-*.txt
+temp.txt
 target/
 .idea/

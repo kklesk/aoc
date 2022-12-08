@@ -3,7 +3,7 @@ use std::io::{BufRead, BufReader};
 
 
 fn main() {
-    
+
     let game_list = File::open("gamelist.txt").expect("could not load file");
     let reader = BufReader::new(game_list);
 
