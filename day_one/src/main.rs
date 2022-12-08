@@ -20,8 +20,9 @@ fn main() {
                 elve_id = elve_id + 1;
                 max_calories_top_three.push(calories);
             },
+            //uglyy check new line
             Err(_) => {
-                if max_calories <= calories{
+                if max_calories < calories{
                     max_calories = calories;
                 }
                 calories = 0;
