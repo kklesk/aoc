@@ -2,7 +2,7 @@ use std::fs::File;
 use std::io::{BufRead, BufReader};
 
 fn main() {
-    let elve_list = match File::open("elf_list.txt") {
+    let elve_list = match File::open("elflist.txt") {
         Ok(file) => file,
         Err(_) => panic!("unable to read file"),
     };
