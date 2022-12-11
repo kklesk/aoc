@@ -14,9 +14,7 @@ fn main() {
                 Ok(parts) => parts.len(),
                 Err(_) => panic!("error while get string len"),
             };
-            // let len = &rucksack_parts.unwrap().len();
             let (item_one,item_two) =  match &rucksack_parts {
-                // Ok(parts) => parts.chars().collect::<&str>().split_at((len/2)),
                 Ok(parts) => parts.split_at((len/2)),
                 Err(_) => panic!("error while splitting rucksack compartments"),
             };
