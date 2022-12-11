@@ -1,3 +1,5 @@
+extern crate core;
+
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 
@@ -7,8 +9,12 @@ fn main() {
 
     for (rucksack_item_one,rucksack_item_two) in buff_reader
         .lines()
-        .map(| rucksack_parts| -> (String,String) {
-            let len = rucksack_parts.as_ref().unwrap().len();
+        .map(| mut rucksack_parts| -> (String,String) {
+            let len = match  &rucksack_parts {
+                Ok(parts) => parts.len(),
+                Err(_) => panic!("error while get string len"),
+            };
+            // let len = &rucksack_parts.unwrap().len();
             let (item_one,item_two) =  match &rucksack_parts {
                 // Ok(parts) => parts.chars().collect::<&str>().split_at((len/2)),
                 Ok(parts) => parts.split_at((len/2)),
