@@ -12,7 +12,7 @@ fn main() {
             let (item_one,item_two) =  match &rucksack_parts {
                 // Ok(parts) => parts.chars().collect::<&str>().split_at((len/2)),
                 Ok(parts) => parts.split_at((len/2)),
-                Err(_) => panic!("error"),
+                Err(_) => panic!("error while splitting rucksack compartments"),
             };
         (item_one.to_string(),item_two.to_string())
         // println!("items {:?}",item_one);
