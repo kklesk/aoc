@@ -1,7 +1,7 @@
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 
-fn main() {
+fn part_one(){
     let rucksack_file = File::open("rucksack_list.txt").expect("error while opening file");
     let buff_reader = BufReader::new(rucksack_file);
     let mut res_part_one: i32 = 0;
@@ -22,19 +22,23 @@ fn main() {
     {
         for item_a in rucksack_item_one.chars() {
             if rucksack_item_two.contains(item_a) {
-                    if item_a.is_lowercase(){
-                        res_part_one = res_part_one + item_a as i32 - 'a' as i32 + 1;
-                        //take the first element ¯\_(ツ)_/¯ ugly
-                        break;
-                    }else {
-                        res_part_one = res_part_one + item_a as i32 - 'A' as i32 + 27 ;
-                        //take the first element  ¯\_(ツ)_/¯ ugly
-                        break;
-                    }
+                if item_a.is_lowercase(){
+                    res_part_one = res_part_one + item_a as i32 - 'a' as i32 + 1;
+                    //take the first element ¯\_(ツ)_/¯ ugly
+                    break;
+                }else {
+                    res_part_one = res_part_one + item_a as i32 - 'A' as i32 + 27 ;
+                    //take the first element  ¯\_(ツ)_/¯ ugly
+                    break;
+                }
             }
         }
+    }{
+        println!("res_part_one: {}",res_part_one);
     }
-    {
-            println!("part_one: {}",res_part_one);
-    }
+
+}
+
+fn main() {
+    part_one();
 }
